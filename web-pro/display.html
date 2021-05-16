@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <button onclick="show()" id="details">click here</button>
+    <div id="display">hi</div>
+    <script scr="jquery.js"></script>
+    jquery
+    <script>
+        function show() {
+            console.log("1");
+            let xhr = new XMLHttpRequest();
+            console.log("2");
+            xhr.open("GET", "sample.json", true)
+            console.log("3");
+            xhr.onload = function () {
+                console.log("4");
+                if (xhr.status == 200) {
+                    var output = "";
+                    var data = JSON.parse(xhr.responseText);
+                    for (let i in data) {
+                        console.log(data[i]);
+                        output+='<li>'+data[i].empName+","+data[i].empId+","+data[i].empMail+'<li>';
+
+                    }
+
+                } else {
+                    console.log("connection failed")
+                }
+                document.getElementById("display").innerHTML = output;
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>
