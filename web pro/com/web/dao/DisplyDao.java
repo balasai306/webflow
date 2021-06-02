@@ -7,8 +7,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.annotation.WebServlet;
-
 import com.web.exep.Myexception;
 import com.web.model.employeeModel;
 import com.web.util.Closing;
@@ -18,13 +16,13 @@ public class DisplyDao {
 	String sql = "select * from empDetails";
 	Closing close = new Closing();
 
-	public List display() throws Myexception {
+	public List<employeeModel> display() throws Myexception {
 
 		Connector connection = new Connector();
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		List<employeeModel> emp = new ArrayList();
+		List<employeeModel> emp = new ArrayList<>();
 
 		try {
 			con = connection.getConnector();
@@ -42,8 +40,7 @@ public class DisplyDao {
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-		//	e.printStackTrace();
+		
 			throw new Myexception("Sql exception occured");
 		}
 		finally {

@@ -10,15 +10,18 @@
     <button onclick="show()" id="details">click here</button>
     <div id="display">hi</div>
     <script scr="jquery.js"></script>
+    
     jquery
     <script>
         function show() {
             console.log("1");
             let xhr = new XMLHttpRequest();
             console.log("2");
-            xhr.open("GET", "sample.json", true)
+            xhr.open("GET", "ViewEmp", true)
             console.log("3");
+           
             xhr.onload = function () {
+            	 console.log(xhr.responseText);
                 console.log("4");
                 if (xhr.status == 200) {
                     var output = "";

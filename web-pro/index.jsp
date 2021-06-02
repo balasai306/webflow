@@ -11,14 +11,16 @@
 <body>
     hi
 
-
+<!-- 
     <form action="ViewEmp">
         <button id="id1" type="submit" style="width: 150px">
             Employee</button>
 
-    </form>
+    </form> -->
 
+<a id="id1" type="submit" style="width: 150px" href="display.html">
 
+            Employee</a>
     </script>
 
 
